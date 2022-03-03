@@ -1,12 +1,12 @@
 pipeline {
   environment {
-       ACCESSTYPE_API_KEY = credentials('proenv_id')
+       ACCESSTYPE_API_KEY_S = credentials('proenv_id')
     }
   agent any
   stages {
    stage('PROENV IDS') {
       steps{
-        echo "Global property file: ${ACCESSTYPE_API_KEY}"
+        echo "Global property file: ${ACCESSTYPE_API_KEY_S}"
       }
     }
   }
