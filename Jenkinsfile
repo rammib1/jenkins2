@@ -8,9 +8,9 @@ pipeline {
                 
                 withCredentials([file(credentialsId: 'proenv_id', variable: 'mySecretFile')]) {
                     // some block can be a groovy block as well and the variable will be available to the groovy script
-                    sh '''
+                 /*   sh '''
                          echo "This is the content of the file `cat $mySecretFile`"
-                       '''
+                       ''' */
                 }
             }
         }
