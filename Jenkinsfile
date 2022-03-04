@@ -6,7 +6,11 @@ pipeline {
   stages {
    stage('PROENV IDS') {
       steps{
-        echo "Global property file: ${ACCESSTYPE_API_KEY_S}"
+                script {
+          withCredentials([file(credentialsId: 'proenv_id', variable: 'FILE')]) {
+              sh 'use $FILE'
+          }
+        }
       }
     }
   }
