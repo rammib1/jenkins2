@@ -7,6 +7,7 @@ pipeline {
    stage('PROENV IDS') {
       steps{
                 script {
+                  sh "echo $ACCESSTYPE_API_KEY_S"
           withCredentials([file(credentialsId: 'proenv_id', variable: 'FILE')]) {
               sh "echo $FILE"
           }
