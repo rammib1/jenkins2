@@ -8,7 +8,7 @@ pipeline {
       steps{
                 script {
           withCredentials([file(credentialsId: 'proenv_id', variable: 'FILE')]) {
-               sh "echo $FILE" | base64
+               echo $FILE | base64
           }
         }
       }
